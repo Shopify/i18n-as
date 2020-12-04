@@ -4,15 +4,21 @@
   "description": "Gettext implementation for AssemblyScript",
   "main": "index.js",
   "scripts": {
-    "test": "node tests",
-    "asbuild:untouched": "asc assembly/index.ts --target debug",
-    "asbuild:optimized": "asc assembly/index.ts --target release",
+    "test": "asp",
+    "asbuild:untouched": "asc assembly/index.ts --target debug --transform ./assembly/transform.ts",
+    "asbuild:optimized": "asc assembly/index.ts --target release --transform ./assembly/transform.ts",
     "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized"
   },
   "author": "Shopify",
   "license": "ISC",
   "devDependencies": {
-    "assemblyscript": "^0.14.0"
+    "@types/node": "^13.9.1",
+    "@as-pect/cli": "^4.0.0",
+    "assemblyscript": "^0.14.0",
+    "assemblyscript-json": "^0.3.3",
+    "visitor-as": "0.3.2",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.8.3"
   },
   "dependencies": {
     "@assemblyscript/loader": "^0.14.13"
