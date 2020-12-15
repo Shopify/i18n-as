@@ -1,10 +1,10 @@
 
 # Rosetta
 
-[About this repo](#about-this-repo) | [Commands](#commands-optional) | [How to use this repo](#how-to-use-this-repo) | [Technical details](#technical-details)
+[About this repo](#about-this-repo) | [Commands](#commands) | [How to use this repo](#how-to-use-this-repo) | [Technical details](#technical-details)
 
 ## About this repo
-This is a prototype for how to support localization for Scripts V2 [AssemblyScript](https://www.assemblyscript.org/) projects.
+This is a prototype for how to support localization for [AssemblyScript](https://www.assemblyscript.org/) projects.
 It works by using a [transform](https://github.com/Shopify/rosetta/blob/master/assembly/transform.ts) to make a [translations.json file](https://github.com/Shopify/rosetta/blob/master/assembly/translations.json) locally assessable within the WebAssembly binary at compilation. 
 
 |                |                                                            |
