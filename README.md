@@ -1,4 +1,3 @@
-
 # Rosetta
 
 [About this repo](#about-this-repo) | [Commands](#commands) | [How to use this repo](#how-to-use-this-repo) | [Technical details](#technical-details)
@@ -41,3 +40,7 @@ Examples:
 - A custom AssemblyScript transform using the [visitor-as](https://github.com/willemneal/visitor-as) package replaces `translationsJSON()` calls with a JSON string containing the contents of [translations.json](https://github.com/Shopify/rosetta/blob/master/assembly/translations.json) at compilation.
 - The JSON is parsed into a readable Map using [assemblyscript-json](https://github.com/nearprotocol/assemblyscript-json) in [gettext.ts](https://github.com/Shopify/rosetta/blob/master/assembly/gettext.ts).
 - Calls to `gettext(locale: string, key: string)` will lookup the translation from this map. If no translation exists, it returns the key. 
+- String templates:
+  - AssemblyScript does not yet support string templates/interpolation natively, so we add our own helper methods to do this for the time being.
+  - Users can specify translations like `"This is {users}'s translation"` and optional pass an array of [Variables](https://github.com/Shopify/rosetta/blob/fe6dad3da8cd2f956fe5e4e8c6e8c1a281edab06/assembly/gettext.ts#L3) to `gettext(...)`. 
+  - When the translation is returned, all Variable keys within the string will be replaced with the Variable value.
