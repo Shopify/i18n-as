@@ -1,4 +1,12 @@
 {
-    "en": {"key": "value"},
-    "fr": {"key": "valeur"}
+    "en": {
+        "key": "value",
+        "This is {user}'s translation": "This is {user}'s translation",
+        "{user} is {years} old": "{user} is {years} old"
+    },
+    "fr": {
+        "key": "valeur",
+        "This is {user}'s translation": "C'est la traduction de {user}",
+        "{user} is {years} old": "{user} a {years} ans"
+    }
 }
