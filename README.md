@@ -42,5 +42,5 @@ Examples:
 - Calls to `gettext(locale: string, key: string)` will lookup the translation from this map. If no translation exists, it returns the key. 
 - String templates:
   - AssemblyScript does not yet support string templates/interpolation natively, so we add our own helper methods to do this for the time being.
-  - Users can specify translations like `"This is {users}'s translation"` and optional pass an array of [Variables](https://github.com/Shopify/rosetta/blob/fe6dad3da8cd2f956fe5e4e8c6e8c1a281edab06/assembly/gettext.ts#L3) to `gettext(...)`. 
+  - Users can specify translations like `"This is {users}'s translation"` and optionally pass an array of [Variables](https://github.com/Shopify/rosetta/blob/fe6dad3da8cd2f956fe5e4e8c6e8c1a281edab06/assembly/gettext.ts#L3) to `gettext(...)`. 
   - When the translation is returned, all Variable keys within the string will be replaced with the Variable value.
