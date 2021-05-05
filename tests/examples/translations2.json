@@ -1,0 +1,10 @@
+{
+    "en": {
+        "hello": "hello",
+        "thank you": "thank you"
+    },
+    "es": {
+        "hello": "hola",
+        "thank you": "gracias"
+    }
+}
