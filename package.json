@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "asp",
-    "asbuild:untouched": "asc assembly/index.ts --target debug --transform ./assembly/transform.ts",
-    "asbuild:optimized": "asc assembly/index.ts --target release --transform ./assembly/transform.ts",
+    "asbuild:untouched": "asc assembly/index.ts --target debug --transform ./src/transform.ts",
+    "asbuild:optimized": "asc assembly/index.ts --target release --transform ./src/transform.ts",
     "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized",
     "build": "npx tsc"
   },
@@ -19,8 +19,8 @@
     "assemblyscript": "^0.14.0",
     "assemblyscript-json": "^0.3.3",
     "visitor-as": "0.3.2",
+    "pkg-dir": "5.0.0",
     "ts-node": "^8.6.2",
-    "typescript": "^3.8.3",
-    "pkg-dir": "5.0.0"
+    "typescript": "^3.8.3"
   }
 }

@@ -1,12 +1,10 @@
 import { utils, TransformVisitor, SimpleParser } from "visitor-as";
 import {
   Parser,
-  FunctionDeclaration,
   IdentifierExpression,
-  StringLiteralExpression,
   CallExpression,
   Expression
-} from "./as";
+} from "../as";
 import * as path from "path";
 import * as fs from "fs";
 import * as pkgDir from "pkg-dir";
@@ -28,10 +26,6 @@ class IncludeBytesTransform extends TransformVisitor {
   afterParse(parser: Parser): void {
     this.rootDir = pkgDir.sync(parser.sources.filter(utils.not(utils.isLibrary))[0].normalizedPath) || './';
     this.visit(parser.sources.filter(s => utils.isLibrary(s) && s.normalizedPath.includes("@shopify/rosetta")));
-
-    parser.sources.forEach(s => {
-        console.log(s.normalizedPath);
-    })
   }
 
   getTranslations(): string {
