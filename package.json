@@ -4,7 +4,7 @@
   "description": "Gettext implementation for AssemblyScript",
   "main": "index.js",
   "scripts": {
-    "test": "asp",
+    "test": "npm run build; cd tests/integration; npm install; npx asp",
     "asbuild:untouched": "asc assembly/index.ts --target debug --transform ./src/transform.ts",
     "asbuild:optimized": "asc assembly/index.ts --target release --transform ./src/transform.ts",
     "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized",

@@ -1,10 +1,6 @@
-import { translate, setTranslations, readfile, readfolder, Variable } from '../assembly/index'
+import { translate, Variable } from '@shopify/rosetta'
 
 describe('translate', () => {
-  beforeAll(() => {
-    setTranslations(readfile("examples/translations.json"))
-  });
-
   describe("when locale exists", () => {
     describe("when translation exists", () => {
       it("should return translation", () => {
@@ -101,62 +97,5 @@ describe('translate', () => {
         })
       })
     })
-  })
-})
-
-describe("readfile", () => {
-  it("fetches translations from a given file", () => {
-    setTranslations(readfile("examples/translations2.json"))
-
-    expect(translate("en", "hello").toString()).toBe("\"hello\"");
-    expect(translate("es", "hello").toString()).toBe("\"hola\"");
-
-    expect(translate("en", "thank you").toString()).toBe("\"thank you\"");
-    expect(translate("es", "thank you").toString()).toBe("\"gracias\"");
-  })
-})
-
-describe("readfolder", () => {
-  it("fetches translations from files, using filename as language", () => {
-    setTranslations(readfolder("examples/folder_translations"))
-    
-    expect(translate("en", "this is in a folder").toString()).toBe("\"this is in a folder\"");
-    expect(translate("fr", "this is in a folder").toString()).toBe("\"c'est dans un dossier\"");
-
-    expect(translate("en", "hello").toString()).toBe("\"hello\"");
-    expect(translate("fr", "hello").toString()).toBe("\"bonjour\"");
-  })
-})
-
-describe("setTranslations", () => {
-  it("sets the translations that the system reads from", () => {
-    setTranslations(readfile("examples/translations.json"))
-
-    // Translations defined in examples/translations.json (found)
-    expect(translate("fr", "key").toString()).toBe("\"valeur\"");
-    // Translations defined in examples/translations2.json (not found)
-    expect(translate("es", "thank you").toString()).toBe("thank you");
-    // Translations defined in examples/folder_translations/ (not found)
-    expect(translate("fr", "this is in a folder").toString()).toBe("this is in a folder");
-
-
-    setTranslations(readfile("examples/translations2.json"))
-
-    // Translations defined in examples/translations.json (not found)
-    expect(translate("fr", "key").toString()).toBe("key");
-    // Translations defined in examples/translations2.json (found)
-    expect(translate("es", "thank you").toString()).toBe("\"gracias\"");
-    // Translations defined in examples/folder_translations/ (not found)
-    expect(translate("fr", "this is in a folder").toString()).toBe("this is in a folder");
-
-
-    setTranslations(readfolder("examples/folder_translations"))
-
-    // Translations defined in examples/translations.json (not found)
-    expect(translate("fr", "key").toString()).toBe("key");
-    // Translations defined in examples/translations2.json (not found)
-    expect(translate("es", "thank you").toString()).toBe("thank you");
-    // Translations defined in examples/folder_translations/ (found)
-    expect(translate("fr", "this is in a folder").toString()).toBe("\"c'est dans un dossier\"");
   })
 })
