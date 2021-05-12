@@ -13,14 +13,14 @@
   "author": "Shopify",
   "license": "ISC",
   "devDependencies": {
+    "@as-pect/cli": "^4.0.0",
     "@assemblyscript/loader": "^0.14.13",
     "@types/node": "^13.9.1",
-    "@as-pect/cli": "^4.0.0",
     "assemblyscript": "^0.14.0",
-    "assemblyscript-json": "^0.3.3",
-    "visitor-as": "0.3.2",
+    "assemblyscript-json": "^1.0.0",
     "pkg-dir": "5.0.0",
     "ts-node": "^8.6.2",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "visitor-as": "0.3.2"
   }
 }

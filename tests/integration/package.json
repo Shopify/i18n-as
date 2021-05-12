@@ -1,7 +1,7 @@
 {
   "name": "integration",
   "dependencies": {
-    "@shopify/rosetta": "file://../../../rosetta",
-    "@as-pect/cli": "^4.0.0"
+    "@as-pect/cli": "^4.0.0",
+    "@shopify/rosetta": "file://../../../rosetta"
   }
 }

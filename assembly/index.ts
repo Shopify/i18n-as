@@ -13,12 +13,12 @@ export class Variable {
 export function translate(locale: string, key: string, variables: Variable[] = []): string {
     let jsonObj = <JSON.Obj>JSON.parse(translations());
 
-    if (!jsonObj.has(locale)) return key;
-    let forLocale = <JSON.Obj>jsonObj.get(locale);
-    
-    if (!forLocale.has(key)) return key;
+    let translationObj = jsonObj.getObj(locale);
+    if (!translationObj) return key;
 
-    let translation = <JSON.Value>forLocale.get(key);
+    let translation = translationObj.getString(key);
+    if (!translation) return key;
+
     return replaceVariables(translation.toString(), variables);
 }
 
