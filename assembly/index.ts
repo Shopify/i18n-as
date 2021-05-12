@@ -1,7 +1,5 @@
 import { JSON } from "assemblyscript-json";
 
-let translationBytes: string = "{}";
-
 export class Variable {
     key: string;
     value: string;
@@ -12,12 +10,12 @@ export class Variable {
     }
 }
 
-export function setTranslations(translations: string): void {
-    translationBytes = translations;
+function translations(): string {
+    return notImplementedError();
 }
 
 export function translate(locale: string, key: string, variables: Variable[] = []): string {
-    let jsonObj = <JSON.Obj>JSON.parse(translationBytes);
+    let jsonObj = <JSON.Obj>JSON.parse(translations());
 
     if (!jsonObj.has(locale)) return key;
     let forLocale = <JSON.Obj>jsonObj.get(locale);

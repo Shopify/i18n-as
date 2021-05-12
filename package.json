@@ -20,6 +20,7 @@
     "assemblyscript-json": "^0.3.3",
     "visitor-as": "0.3.2",
     "ts-node": "^8.6.2",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "pkg-dir": "5.0.0"
   }
 }
