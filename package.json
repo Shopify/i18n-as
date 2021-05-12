@@ -8,7 +8,7 @@
     "asbuild:untouched": "asc assembly/index.ts --target debug --transform ./src/transform.ts",
     "asbuild:optimized": "asc assembly/index.ts --target release --transform ./src/transform.ts",
     "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized",
-    "build": "npx tsc"
+    "build": "npx tsc --p tsconfig.json"
   },
   "author": "Shopify",
   "license": "ISC",

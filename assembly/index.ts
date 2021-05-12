@@ -10,10 +10,6 @@ export class Variable {
     }
 }
 
-function translations(): string {
-    return notImplementedError();
-}
-
 export function translate(locale: string, key: string, variables: Variable[] = []): string {
     let jsonObj = <JSON.Obj>JSON.parse(translations());
 
@@ -26,13 +22,9 @@ export function translate(locale: string, key: string, variables: Variable[] = [
     return replaceVariables(translation.toString(), variables);
 }
 
-export function readfile(path: string): string {
+function translations(): string {
     return notImplementedError();
-};
-
-export function readfolder(path: string): string {
-    return notImplementedError();
-};
+}
 
 function replaceVariables(translation: string, variables: Variable[]): string {
     let updatedTranslation = translation;

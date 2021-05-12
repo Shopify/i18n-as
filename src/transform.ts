@@ -30,20 +30,19 @@ class IncludeBytesTransform extends TransformVisitor {
 
   getTranslations(): string {
     let config = new Config(this.rootDir);
-    console.log(JSON.stringify(config));
 
-      var translationMap: any = {}
-      try {
-        fs.readdirSync(config.translationsPath).forEach((filename: string) => {
-          let language: string = filename.substr(0, filename.lastIndexOf("."));
-          let filepath: string = path.join(config.translationsPath, filename);
-          translationMap[language] = JSON.parse(fs.readFileSync(filepath).toString());
-        });
-      } catch (e) {
-        throw `[Error] no translations found in '${config.translationsPath}', ${e}`;
-      }
+    var translationMap: any = {}
+    try {
+    fs.readdirSync(config.translationsPath).forEach((filename: string) => {
+        let language: string = filename.substr(0, filename.lastIndexOf("."));
+        let filepath: string = path.join(config.translationsPath, filename);
+        translationMap[language] = JSON.parse(fs.readFileSync(filepath).toString());
+    });
+    } catch (e) {
+    throw `[Error] no translations found in '${config.translationsPath}', ${e}`;
+    }
 
-      return JSON.stringify(translationMap);
+    return JSON.stringify(translationMap);
   }
 }
 
