@@ -11,7 +11,7 @@ export class Variable {
 }
 
 export function translate(locale: string, key: string, variables: Variable[] = []): string {
-    let jsonObj = <JSON.Obj>JSON.parse(translations());
+    let jsonObj = <JSON.Obj>JSON.parse(__translations());
 
     let translationObj = jsonObj.getObj(locale);
     if (!translationObj) return key;
@@ -22,7 +22,7 @@ export function translate(locale: string, key: string, variables: Variable[] = [
     return replaceVariables(translation.toString(), variables);
 }
 
-function translations(): string {
+function __translations(): string {
     return notImplementedError();
 }
 

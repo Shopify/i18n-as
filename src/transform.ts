@@ -14,7 +14,7 @@ class IncludeBytesTransform extends TransformVisitor {
 
   visitCallExpression(node: CallExpression): Expression {
     if (node.expression instanceof IdentifierExpression){
-        if (node.expression.text == "translations") {
+        if (node.expression.text == "__translations") {
             let res = SimpleParser.parseExpression(`\`${this.getTranslations()}\``);
             res.range = node.range;
             return res;
