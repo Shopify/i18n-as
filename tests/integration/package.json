@@ -1,7 +1,8 @@
 {
     "name": "integration",
     "scripts": {
-        "test": "npm run test:success_no_config_file && npm run test:success_with_config_file && npm run test:failure_transform_not_used",
+        "test": "npm run test:general && npm run test:success_no_config_file && npm run test:success_with_config_file && npm run test:failure_transform_not_used",
+        "test:general": "cd general; npx asp",
         "test:success_no_config_file": "cd success_no_config_file; npx asp",
         "test:success_with_config_file": "cd success_with_config_file; npx asp",
         "test:failure_transform_not_used": "cd failure_transform_not_used; npx asp"
