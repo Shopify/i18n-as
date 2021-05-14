@@ -31,7 +31,7 @@ class IncludeBytesTransform extends TransformVisitor {
   getTranslations(): string {
     let config = new Config(this.rootDir);
 
-    var translationMap: any = {}
+    var translationMap: { [key: string]: string } = {}
     try {
     fs.readdirSync(config.translationsPath).forEach((filename: string) => {
         let language: string = filename.substr(0, filename.lastIndexOf("."));
