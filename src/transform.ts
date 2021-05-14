@@ -39,7 +39,7 @@ class IncludeBytesTransform extends TransformVisitor {
         translationMap[language] = JSON.parse(fs.readFileSync(filepath).toString());
     });
     } catch (e) {
-    throw `[Error] no translations found in '${config.translationsPath}', ${e}`;
+      console.warn(`[Rosetta] no translations found in '${config.translationsPath}', ${e}`)
     }
 
     return JSON.stringify(translationMap);

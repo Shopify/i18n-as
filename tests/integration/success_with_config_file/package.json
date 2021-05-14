@@ -1,0 +1,7 @@
+{
+  "name": "success_with_config_file",
+  "dependencies": {
+    "@as-pect/cli": "^4.0.0",
+    "@shopify/rosetta": "file://../../../../rosetta"
+  }
+}
