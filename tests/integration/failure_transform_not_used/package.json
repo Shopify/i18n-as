@@ -1,0 +1,7 @@
+{
+  "name": "failure_transform_not_used",
+  "dependencies": {
+    "@as-pect/cli": "^4.0.0",
+    "@shopify/rosetta": "file://../../../../rosetta"
+  }
+}
