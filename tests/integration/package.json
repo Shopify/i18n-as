@@ -1,7 +1,11 @@
 {
-  "name": "integration",
-  "dependencies": {
-    "@as-pect/cli": "^4.0.0",
-    "@shopify/rosetta": "file://../../../rosetta"
-  }
+    "name": "integration",
+    "scripts": {
+        "test": "npm run test:valid_config",
+        "test:valid_config": "cd success_no_config_file; npx asp"
+    },
+    "dependencies": {
+        "@as-pect/cli": "^4.0.0",
+        "@shopify/rosetta": "file://../../../rosetta"
+    }
 }
