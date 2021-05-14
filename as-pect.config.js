@@ -16,7 +16,7 @@ module.exports = {
       /** A runtime must be provided here. */
       // "--runtime": ["none"], // Acceptable values are: full, half, stub (arena), and none
       "--transform": [
-          "./assembly/transform.ts",
+          "./src/transform.ts",
       ]
     },
     /**
