@@ -1,8 +1,12 @@
 {
-  "name": "rosetta",
+  "name": "@shopify/rosetta",
   "version": "0.0.1",
-  "description": "Gettext implementation for AssemblyScript",
-  "main": "index.js",
+  "description": "An i18n implementation for AssemblyScript",
+  "main": "assembly/index.ts",
+  "ascMain": "assembly/index.ts",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "npm run build; cd tests/integration; npm test",
     "asbuild:untouched": "asc assembly/index.ts --target debug --transform ./src/transform.ts",
@@ -14,7 +18,7 @@
     "fmt": "prettier --write '**/*.ts'"
   },
   "author": "Shopify",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@as-pect/cli": "^4.0.0",
     "@assemblyscript/loader": "^0.14.13",
