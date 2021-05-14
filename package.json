@@ -8,17 +8,24 @@
     "asbuild:untouched": "asc assembly/index.ts --target debug --transform ./src/transform.ts",
     "asbuild:optimized": "asc assembly/index.ts --target release --transform ./src/transform.ts",
     "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized",
-    "build": "npx tsc --p tsconfig.json"
+    "build": "npx tsc --p tsconfig.json",
+    "lint": "npx eslint . --ext .ts --max-warnings=0",
+    "fmt:check": "prettier --check '**/*.ts'",
+    "fmt": "prettier --write '**/*.ts'"
   },
   "author": "Shopify",
   "license": "ISC",
   "devDependencies": {
     "@as-pect/cli": "^4.0.0",
     "@assemblyscript/loader": "^0.14.13",
+    "@shopify/eslint-plugin-assemblyscript": "^0.1.13",
+    "@typescript-eslint/parser": "^2.31.0",
     "@types/node": "^13.9.1",
     "assemblyscript": "^0.14.0",
     "assemblyscript-json": "^1.0.0",
+    "eslint": "^7.25.0",
     "pkg-dir": "5.0.0",
+    "prettier": "^2.0.5",
     "ts-node": "^8.6.2",
     "typescript": "^3.8.3",
     "visitor-as": "0.3.2"
