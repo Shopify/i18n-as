@@ -1,8 +1,9 @@
 {
     "name": "integration",
     "scripts": {
-        "test": "npm run test:valid_config",
-        "test:valid_config": "cd success_no_config_file; npx asp"
+        "test": "npm run test:success_no_config_file && npm run test:success_with_config_file",
+        "test:success_no_config_file": "cd success_no_config_file; npx asp",
+        "test:success_with_config_file": "cd success_with_config_file; npx asp"
     },
     "dependencies": {
         "@as-pect/cli": "^4.0.0",

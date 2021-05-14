@@ -1,0 +1,7 @@
+{
+    "key": "valeur",
+    "hello": "bonjour",
+    "this is in a folder": "c'est dans un dossier",
+    "This is {user}'s translation": "C'est la traduction de {user}",
+    "{user} is {years} old": "{user} a {years} ans"
+}
