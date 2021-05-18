@@ -41,16 +41,21 @@ class IncludeBytesTransform extends TransformVisitor {
 
     var translationMap: { [key: string]: string } = {};
     try {
-      fs.readdirSync(config.translationsPath).forEach((filename: string) => {
-        let language: string = filename.substr(0, filename.lastIndexOf("."));
-        let filepath: string = path.join(config.translationsPath, filename);
-        translationMap[language] = JSON.parse(
-          fs.readFileSync(filepath).toString()
-        );
-      });
+      fs.readdirSync(config.localeFilesDirectory).forEach(
+        (filename: string) => {
+          let language: string = filename.substr(0, filename.lastIndexOf("."));
+          let filepath: string = path.join(
+            config.localeFilesDirectory,
+            filename
+          );
+          translationMap[language] = JSON.parse(
+            fs.readFileSync(filepath).toString()
+          );
+        }
+      );
     } catch (e) {
       console.warn(
-        `[i18n-as] no translations found in '${config.translationsPath}', ${e}`
+        `[i18n-as] no locale files found in '${config.localeFilesDirectory}', ${e}`
       );
     }
 
@@ -59,7 +64,7 @@ class IncludeBytesTransform extends TransformVisitor {
 }
 
 class Config {
-  translationsPath: string;
+  localeFilesDirectory: string;
 
   constructor(projectRootDir: string) {
     let pathToConfigFile = path.join(projectRootDir, "i18n.config.json");
@@ -67,9 +72,9 @@ class Config {
       ? JSON.parse(fs.readFileSync(pathToConfigFile).toString())
       : {};
 
-    this.translationsPath = path.join(
+    this.localeFilesDirectory = path.join(
       projectRootDir,
-      configData.translationsPath || "./translations"
+      configData.localeFilesDirectory || "./locales"
     );
   }
 }
