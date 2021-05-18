@@ -1,4 +1,4 @@
-import { translate, Variable } from "@shopify/rosetta";
+import { translate, Variable } from "@shopify/i18n-as";
 
 describe("translate", () => {
   describe("when locale exists", () => {

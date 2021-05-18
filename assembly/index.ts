@@ -46,6 +46,6 @@ function replaceVariables(translation: string, variables: Variable[]): string {
 
 function notImplementedError(): string {
   throw new Error(
-    "You must use the @shopify/rosetta/dist/transform.js compiler transform to use this function."
+    "You must use the @shopify/i18n-as/dist/transform.js compiler transform to use this function."
   );
 }

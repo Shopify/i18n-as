@@ -1,5 +1,5 @@
 {
-  "name": "general",
+  "name": "transform_only_works_on_i18n_as_sources",
   "dependencies": {
     "@as-pect/cli": "^4.0.0",
     "@shopify/i18n-as": "file://../../../"

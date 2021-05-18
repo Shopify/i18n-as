@@ -2,6 +2,6 @@
   "name": "success_no_config_file",
   "dependencies": {
     "@as-pect/cli": "^4.0.0",
-    "@shopify/rosetta": "file://../../../../rosetta"
+    "@shopify/i18n-as": "file://../../../"
   }
 }
