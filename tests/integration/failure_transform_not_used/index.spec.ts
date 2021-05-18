@@ -1,4 +1,4 @@
-import { translate } from "@shopify/rosetta";
+import { translate } from "@shopify/i18n-as";
 
 describe("translate", () => {
   it("does not throw when not using translate", () => {
@@ -10,6 +10,6 @@ describe("translate", () => {
     () => {
       translate("fr", "key");
     },
-    "You must use the @shopify/rosetta/dist/transform.js compiler transform to use this function."
+    "You must use the @shopify/i18n-as/dist/transform.js compiler transform to use this function."
   );
 });

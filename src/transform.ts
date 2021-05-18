@@ -31,7 +31,7 @@ class IncludeBytesTransform extends TransformVisitor {
     this.visit(
       parser.sources.filter(
         (s) =>
-          utils.isLibrary(s) && s.normalizedPath.includes("@shopify/rosetta")
+          utils.isLibrary(s) && s.normalizedPath.includes("@shopify/i18n-as")
       )
     );
   }
@@ -50,7 +50,7 @@ class IncludeBytesTransform extends TransformVisitor {
       });
     } catch (e) {
       console.warn(
-        `[Rosetta] no translations found in '${config.translationsPath}', ${e}`
+        `[i18n-as] no translations found in '${config.translationsPath}', ${e}`
       );
     }
 

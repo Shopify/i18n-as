@@ -4,7 +4,7 @@ module.exports = {
     flags: {
         "--runtime": ["stub"],
         "--transform": [
-            "@shopify/rosetta/dist/transform.js",
+            "@shopify/i18n-as/dist/transform.js",
         ]
     },
     disclude: [/node_modules/],
