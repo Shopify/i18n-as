@@ -37,21 +37,21 @@ Since i18n-as uses a compiler transform to read and parse translations, you need
   ```
 
 ### Configuration
-By default, i18n-as will look for translations in the `/translations` folder at the project root. To configure this location, you can optionally add a `i18n.config.json` file:
+By default, i18n-as will look for locale files in the `/locales` folder at the project root. To configure this location, you can optionally add a `i18n.config.json` file:
 ```
 // i18n.config.json
 {
-  "translationsPath": "/path/to/your/translations"
+  "localeFilesDirectory": "/path/to/your/folder"
 }
 ```
 
 
-### Translation Files
-Translations should be written in JSON files and abide by the following folder structure:
+### Locale Files
+Locale files should be written in JSON files and abide by the following folder structure:
 ```
 .
 ├── assembly/
-├── translations/
+├── locales/
 │   ├── en.json
 │   └── fr.json
 |   └── <locale>.json
@@ -59,7 +59,7 @@ Translations should be written in JSON files and abide by the following folder s
 ```
 
 ```
-// translations/<locale>.json
+// locales/<locale>.json
 {
   "my translation key": "some translated value",
   "another key: "another value"
@@ -69,13 +69,13 @@ Translations should be written in JSON files and abide by the following folder s
 ### AssemblyScript example
 
 ```
-// translations/fr.json
+// locales/fr.json
 {
   "hello": "bonjour",
 }
 ```
 ```
-// translations/es.json
+// locales/es.json
 {
   "hello": "hola",
 }
@@ -87,7 +87,6 @@ import { translate } from '@shopify/i18n-as'
 translate("fr", "hello") // => "bonjour"
 translate("es", "hello") // => "hola"
 translate("en", "hello") // => defaults to the key, "hello"
-
 ```
 
 ## Development
