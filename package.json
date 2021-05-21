@@ -1,11 +1,14 @@
 {
   "name": "@shopify/i18n-as",
   "version": "0.0.1",
+  "license": "MIT",
   "description": "An i18n implementation for AssemblyScript",
   "main": "assembly/index.ts",
   "ascMain": "assembly/index.ts",
+  "author": "Shopify Inc.",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "@shopify:registry": "https://registry.npmjs.org"
   },
   "scripts": {
     "test": "npm run build; cd tests/integration; npm test",
@@ -15,10 +18,9 @@
     "build": "npx tsc --p tsconfig.json",
     "lint": "npx eslint . --ext .ts --max-warnings=0",
     "fmt:check": "prettier --check '**/*.ts'",
-    "fmt": "prettier --write '**/*.ts'"
+    "fmt": "prettier --write '**/*.ts'",
+    "prepublish": "npm run build"
   },
-  "author": "Shopify",
-  "license": "MIT",
   "devDependencies": {
     "@as-pect/cli": "^4.0.0",
     "@assemblyscript/loader": "^0.14.13",
