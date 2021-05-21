@@ -1,10 +1,10 @@
 # i18n-as
 
-[About this project](#about-this-project) | [Commands](#commands) | [How to use this project](#how-to-use-this-project) | [Development](#development) | [Technical details](#technical-details)
+[About this project](#about-this-project) | [How to use this project](#how-to-use-this-project) | [Development](#development)
 
 ## About this project
 i18n-as is a localization package for [AssemblyScript](https://www.assemblyscript.org/) projects.
-It works by using a compiler [transform](https://github.com/Shopify/i18n-as/blob/master/assembly/transform.ts) to make [translations](https://github.com/Shopify/i18n-as/tree/master/tests/integration/translations) locally accessible within the WebAssembly binary. 
+It works by using a compiler [transform](https://github.com/Shopify/i18n-as/blob/06bf5586fbf41a8b2cda8103016f3223eeb118dd/src/transform.ts) to make [translations](https://github.com/Shopify/i18n-as/tree/06bf5586fbf41a8b2cda8103016f3223eeb118dd/tests/integration/locales) locally accessible within the WebAssembly binary. 
 
 ## How to use this project
 ### Requirements
@@ -89,6 +89,9 @@ translate("es", "hello") // => "hola"
 translate("en", "hello") // => defaults to the key, "hello"
 ```
 
+### More Documentation
+Additional documentation can be found in the [wiki](https://github.com/Shopify/i18n-as/wiki).
+
 ## Development
 ### Quick Start
 ```
@@ -102,12 +105,3 @@ $ npm run test
 * `npm run asbuild` - build the WebAssembly binary.
 * `npm run build` - compile the TypeScript transform into JavaScript.
 * `npm run test` - run the tests.
-
-## Technical details
-- A custom AssemblyScript transform using the [visitor-as](https://github.com/willemneal/visitor-as) package replaces `__translations()` calls within i18n-as library sources with a JSON string representing a map of the defined [translations](https://github.com/Shopify/i18n-as/tree/209fcd3fbce742aca38f85314f8cbc8fec444198/tests/integration/translations) at compilation.
-- The JSON is parsed into a readable Map using [assemblyscript-json](https://github.com/nearprotocol/assemblyscript-json) in [assembly/index.ts](https://github.com/Shopify/i18n-as/blob/209fcd3fbce742aca38f85314f8cbc8fec444198/assembly/index.ts).
-- Calls to `translate(locale: string, key: string)` will lookup the translation from this map. If no translation exists, it returns the key. 
-- String templates:
-  - Users can specify translations like `"This is {users}'s translation"` and optionally pass an array of [Variables](https://github.com/Shopify/i18n-as/blob/209fcd3fbce742aca38f85314f8cbc8fec444198/assembly/index.ts#L3-L11) to `translate(...)`. 
-  - When the translation is returned, all Variable keys within the string will be replaced with the Variable value.
-
