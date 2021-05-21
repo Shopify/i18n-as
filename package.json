@@ -1,6 +1,6 @@
 {
   "name": "@shopify/i18n-as",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "description": "An i18n implementation for AssemblyScript",
   "main": "assembly/index.ts",
