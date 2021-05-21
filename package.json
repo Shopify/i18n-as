@@ -15,7 +15,7 @@
     "dist"
   ],
   "scripts": {
-    "test": "npm run build; cd tests/integration; npm test",
+    "test": "cd tests/integration; npm test",
     "asbuild:untouched": "asc assembly/index.ts --target debug --transform ./src/transform.ts",
     "asbuild:optimized": "asc assembly/index.ts --target release --transform ./src/transform.ts",
     "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized",
@@ -23,7 +23,8 @@
     "lint": "npx eslint . --ext .ts --max-warnings=0",
     "fmt:check": "prettier --check '**/*.ts'",
     "fmt": "prettier --write '**/*.ts'",
-    "prepublish": "npm run build"
+    "prepublishOnly": "npm run build",
+    "pretest": "npm run build"
   },
   "dependencies": {
     "pkg-dir": "5.0.0",
