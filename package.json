@@ -10,6 +10,10 @@
     "access": "public",
     "@shopify:registry": "https://registry.npmjs.org"
   },
+  "files": [
+    "*",
+    "dist"
+  ],
   "scripts": {
     "test": "npm run build; cd tests/integration; npm test",
     "asbuild:untouched": "asc assembly/index.ts --target debug --transform ./src/transform.ts",
